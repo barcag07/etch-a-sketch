@@ -3,3 +3,14 @@
      margin: 0px;
      padding: 0px;
 }
+
+.grid-container {
+     border: 3px solid green;
+     display: flex;
+     justify-content: center;
+     margin: 25px;
+}
+
+/* .grid {
+     margin: 25px;
+} */
