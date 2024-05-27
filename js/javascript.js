@@ -18,11 +18,16 @@ squareButton.addEventListener("click", function () {
      alert(numSquares);
 
      //remove the current grid
+     const gridItem = document.querySelectorAll(".grid-item");
+     for (let i = 0; i <= gridItem.length; i++) {
+          gridItem[i].remove();
+     }
+     // console.log(gridItem);
 });
 gridContainer.prepend(squareButton);
 
 const grid = document.createElement("div");
-grid.setAttribute("style", "display: flex; flex-wrap: wrap; width: 960px; outline: 3px solid black;");
+grid.setAttribute("style", "display: flex; flex-wrap: wrap; width: 960px; height: 960px; outline: 3px solid black;");
 
 // const test = document.createElement("p");
 // gridContainer.appendChild(test);
