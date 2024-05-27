@@ -19,10 +19,13 @@ squareButton.addEventListener("click", function () {
 
      //remove the current grid
      const gridItem = document.querySelectorAll(".grid-item");
-     for (let i = 0; i <= gridItem.length; i++) {
+     for (let i = 0; i < gridItem.length; i++) {
           gridItem[i].remove();
      }
-     // console.log(gridItem);
+     
+
+     //create new grid Items
+     console.log(numSquares);
 });
 gridContainer.prepend(squareButton);
 
