@@ -23,6 +23,8 @@ squareButton.addEventListener("click", function () {
           gridItem[i].remove();
      }
      
+     grid.innerHTML = "";
+
 
      //create new grid Items
      for (let j = 0; j < numSquares  * numSquares; j++) {
