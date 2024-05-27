@@ -25,7 +25,17 @@ squareButton.addEventListener("click", function () {
      
 
      //create new grid Items
-     console.log(numSquares);
+     for (let j = 0; j < numSquares  * numSquares; j++) {
+          const newGridItem = document.createElement("div");
+          newGridItem.classList.add("new-grid-item", "new-item-" + j);
+          let squareHW = 960 / numSquares;
+          newGridItem.style.height = squareHW + "px";
+          newGridItem.style.width = squareHW + "px";
+          newGridItem.style.outline = "1px solid blue";
+          // newGridItem.style.backgroundColor = "red";
+          grid.appendChild(newGridItem);
+     }
+     // console.log(numSquares);
 });
 gridContainer.prepend(squareButton);
 
