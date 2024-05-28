@@ -15,7 +15,7 @@ squareButton.addEventListener("click", function () {
           numSquares = Number(numSquares);
      }
      while (isNaN(numSquares) || numSquares < 1 || numSquares > 100);
-     alert(numSquares);
+     // alert(numSquares);
 
      //remove the current grid
      const gridItem = document.querySelectorAll(".grid-item");
@@ -57,12 +57,30 @@ grid.setAttribute("style", "display: flex; flex-wrap: wrap; width: 960px; height
 for (let i = 1; i <= 256; i++) {
      const gridItem = document.createElement("div");
      gridItem.classList.add("grid-item","item-" + i);
-     gridItem.setAttribute ("style", "height: 60px; width: 60px; outline: 1px solid black;");
+     gridItem.setAttribute ("style", "height: 60px; width: 60px; outline: 1px solid black; background-color: rgb(255, 255, 255);");
 
+     
      //Adding hover event listener to each grid item
      gridItem.addEventListener("mouseover", function() {
           //Specifically target the backgroundColor or else it will mess up if .setAttribute is used
-          gridItem.style.backgroundColor = "red";
+
+
+          //Change background color to random while not already a color UNCOMMENT
+          if (gridItem.style.backgroundColor === "rgb(255, 255, 255)") {
+               let r = Math.floor(Math.random() * 256);
+               let g = Math.floor(Math.random() * 256);
+               let b = Math.floor(Math.random() * 256);
+               console.log(`RGB = ${r},${g},${b}`);
+               gridItem.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+          }
+
+          //change background color even if already has color
+          //UNCOMMENT
+          // let r = Math.floor(Math.random() * 256);
+          // let g = Math.floor(Math.random() * 256);
+          // let b = Math.floor(Math.random() * 256);
+          // console.log(`RGB = ${r},${g},${b}`);
+          // gridItem.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
      });
      grid.appendChild(gridItem);
 }
