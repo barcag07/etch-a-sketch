@@ -33,8 +33,13 @@ squareButton.addEventListener("click", function () {
           let squareHW = 960 / numSquares;
           newGridItem.style.height = squareHW + "px";
           newGridItem.style.width = squareHW + "px";
-          newGridItem.style.outline = "1px solid blue";
+          newGridItem.style.outline = "1px solid black";
           // newGridItem.style.backgroundColor = "red";
+
+          //make event listener for when div is hovered over
+          newGridItem.addEventListener("mouseover", function() {
+               newGridItem.style.backgroundColor = "red";
+          });
           grid.appendChild(newGridItem);
      }
      // console.log(numSquares);
@@ -52,7 +57,7 @@ grid.setAttribute("style", "display: flex; flex-wrap: wrap; width: 960px; height
 for (let i = 1; i <= 256; i++) {
      const gridItem = document.createElement("div");
      gridItem.classList.add("grid-item","item-" + i);
-     gridItem.setAttribute ("style", "height: 60px; width: 60px; outline: 1px solid blue;");
+     gridItem.setAttribute ("style", "height: 60px; width: 60px; outline: 1px solid black;");
 
      //Adding hover event listener to each grid item
      gridItem.addEventListener("mouseover", function() {
