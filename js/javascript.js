@@ -37,13 +37,21 @@ squareButton.addEventListener("click", function () {
 
           //make event listener for when div is hovered over
           newGridItem.addEventListener("mouseover", function() {
-               // newGridItem.style.backgroundColor = "red";
+               // change background color to random number if doesn't already have a color
+               //UNCOMMENT
                if (newGridItem.style.backgroundColor === "rgb(255, 255, 255)") {
                     let newR = Math.floor(Math.random() * 256);
                     let newG = Math.floor(Math.random() * 256);
                     let newB = Math.floor(Math.random() * 256);
                     newGridItem.style.backgroundColor = "rgb(" + newR + "," + newG + "," + newB + ")";
                }
+
+               //change background color to random color even if already has color
+               //UNCOMMENT
+               // let newR = Math.floor(Math.random() * 256);
+               // let newG = Math.floor(Math.random() * 256);
+               // let newB = Math.floor(Math.random() * 256)
+               // newGridItem.style.backgroundColor = "rgb(" + newR + "," + newG + "," + newB + ")";
           });
           grid.appendChild(newGridItem);
      }
