@@ -15,7 +15,6 @@ squareButton.addEventListener("click", function () {
           numSquares = Number(numSquares);
      }
      while (isNaN(numSquares) || numSquares < 1 || numSquares > 100);
-     // alert(numSquares);
 
      //remove the current grid
      const gridItem = document.querySelectorAll(".grid-item");
@@ -34,11 +33,17 @@ squareButton.addEventListener("click", function () {
           newGridItem.style.height = squareHW + "px";
           newGridItem.style.width = squareHW + "px";
           newGridItem.style.outline = "1px solid black";
-          // newGridItem.style.backgroundColor = "red";
+          newGridItem.style.backgroundColor = "rgb(255, 255, 255)";
 
           //make event listener for when div is hovered over
           newGridItem.addEventListener("mouseover", function() {
-               newGridItem.style.backgroundColor = "red";
+               // newGridItem.style.backgroundColor = "red";
+               if (newGridItem.style.backgroundColor === "rgb(255, 255, 255)") {
+                    let newR = Math.floor(Math.random() * 256);
+                    let newG = Math.floor(Math.random() * 256);
+                    let newB = Math.floor(Math.random() * 256);
+                    newGridItem.style.backgroundColor = "rgb(" + newR + "," + newG + "," + newB + ")";
+               }
           });
           grid.appendChild(newGridItem);
      }
